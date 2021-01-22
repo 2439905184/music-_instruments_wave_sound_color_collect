@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>乐曲调色板</title>
+  </head>
+  <body>
+    <!-- TODO: 或许可以给每一个标题指向一个具体的例子介绍页面 -->
+    <h2>FL 自带的FutureBass</h2>
+    <p>下面的内容，如果没有合成器基础知识，是看不明白的，你可以在下面学习完基础，再来看分析（现在我的分析写的很简单，没详细写）</p>
+    <a href="https://learningsynths.ableton.com/" target="_blank">你可以在这里学习合成器基础知识（交互式学习）</a>
+    <ol>
+      <li>SawBass(GMS合成器)（力量感，电流声）Power</li>
+      <li>SubBass(可使用任意合成器)</li>
+      <li>Chords(可使用任意合成器)填充</li>
+      <li>音量逐渐快速抖动的fx</li>
+      <img src="img/fx.png" alt="LFO">
+
+    </ol>
+    <h2>FL 自带的Lucqiu Drum&Bass</h2>
+    <ol>
+      <li>bpm150</li>
+      <li>较快的循环鼓组</li>
+      <li>钢琴（低）</li>
+      <li>类似玩具钢琴声（高）加点缀</li>
+    </ol>
+    <h2>FL 自带The Light 具体细节自己打开工程查看</h2>
+    <ol>
+      <li style="color:green;">特有的Woble Bass合成器节奏段落（滤波器控制）：波形：猜测是基于三角或者锯齿波的</li>
+      <li>修改的是harmless合成器的LFO,LFO类型是正弦lfo</li>
+      <li>还有细节的部分，不是光加上LFO调制就完事了，还更改了LFO的速度，是其产生不同的节奏，这样可以是律动不那么单一，增强律动性（这一点感觉对电子乐很重要）
+        但旋律变化不大，音符时长就是铺满一小节</li>
+        <li>这首曲子使用的synth B是sytrus做的，使用了三个osc，而且是低 中 高 的对应关系（相对的音调关系）</li>
+        <li>与之相对应的是使用了三个Filter,这三个Osc都是Saw波，且没有更改谐波，就是原来的波形，但频率有更改，对应关系为
+        osc1 - 1.0000x(Freq ratio)
+        osc2 - 4.0000x(Freq ratio)
+        osc3 - 3.0000x(Freq ratio)
+        </li>
+        <li>这首曲子对人声进行了处理，使用了声码器</li>
+        <li>Synth A是其用于点缀的琶音旋律，同样使用的是做减法的逻辑，对音色进行滤波，琶音则通过FL自带的琶音器来实现</li>
+        <li style="color:red;">在BreakDown部分使用了包络线来控制Drum的节奏或者说是律动吧吗，跟对Woble bass的操作类似，但会做起来会 更加复杂，实现这个效果一共使用了6个效果器</li>
+        <li style="color:blue;">分别是Maximus,Fruit WaveShaper,Love Philter,Fruity parametric EQ2,Gross Beat</li>
+        <li style="color:red;">节奏效果，主要通过控制Gross Beat里面的一个控制器来实现</li>
+        <li style="color:blue;">音色效果，主要通过love philter里面的x/y Modulation的y的变化实现，这是fl另外的一种滤波器，但总体和普通滤波器功能也差不多</li>
+
+    </ol>
+  <b>  <p style="color:red;">至于我为什么要手动把参数写出来，是因为不同Daw的预制文件存储格式不一样，没有统一的规范，
+      在FL的硬件合成器(cpu计算出波形的类型的合成器)的预制格式fst,在Lmms就不一定用的了，在caustic也不一定用的了，
+      所以需要单独把参数拆分出来，写成文本形式，这样即使合成器不同，软件不同，但只要差不多原理的合成器按照参数表，都可以调出近似的音色。
+      当然你也可以直接导出采样来用，但是有一个问题，假设你需要这个音色，但你的项目bpm和音色的速度不符合，还得去自己解决问题。
+      而使用参数表的形式，可以直接照着钮，不受bpm的限制，音色直接由你的cpu计算出来
+    </p>
+</b>
+<h2>FL RawFL </h2>
+<p>3xosc #2 使用modx 和高通滤波器实现特有音色，主要是对mox的LFO的speed做了变大处理</p>
+<p>3xosc #3对pitch的adse包络线进行了修改，再加上滑音处理，总体音色是那种向下滑的感觉</p>
+<p>之后截图，对3xosc #3的pitch部分，使用的是快速低通类型的滤波器</p>
+  </body>
+</html>
